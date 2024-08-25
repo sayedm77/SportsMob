@@ -6,9 +6,8 @@ target 'SportsMob' do
   use_frameworks!
 
   # Pods for SportsMob
-  pod 'Kingfisher', '~> 7.0'
+  pod 'Kingfisher'
   pod 'Alamofire'
-  pod 'lottie-ios'
   pod 'ReachabilitySwift'
-
+  pod 'SDWebImage', '~> 5.0'
 end
