@@ -19,6 +19,36 @@ struct url {
     static func UrlLeagues (sport : SportType) -> URL? {
         return URL(string: baseURL + sport.rawValue + leagues + apiKey)
     }
+    static func getLeagueDetailsURL(sport: SportType, leagueID: Int, forDate range: DateRange) -> URL? {
+        return URL(string: baseURL + sport.rawValue + leagueDetails + "\(leagueID)" + range.query + apiKey)
+    }
     
+    static func getTeamDetailsURL(sport: SportType, teamID: Int) -> URL? {
+        return URL(string: baseURL + sport.rawValue + teamDetails + "\(teamID)" + apiKey)
+    }
+}
+//#
+enum DateRange: String {
+    case prevYear
+    case nextYear
     
+    var query: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let currentDate = Date()
+        
+        switch self {
+        case .prevYear:
+            let pastYear = Calendar.current.date(byAdding: .year, value: -1, to: currentDate)!
+            //            return "&from=\(formatter.string(from: pastYear))&to=\(formatter.string(from: currentDate))"
+
+            let prevDay = Calendar.current.date(byAdding: .day, value: -1, to: currentDate)!
+            return "&from=\(formatter.string(from: pastYear))&to=\(formatter.string(from: prevDay))"
+        case .nextYear:
+            let comingYear = Calendar.current.date(byAdding: .year, value: 1, to: currentDate)!
+            //            return "&from=\(formatter.string(from: currentDate))&to=\(formatter.string(from: comingYear))"
+            let nextDay = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
+            return "&from=\(formatter.string(from: nextDay))&to=\(formatter.string(from: comingYear))"
+        }
+    }
 }

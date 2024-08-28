@@ -69,6 +69,10 @@ class LeaguesViewModel{
             }
             
         }
+    
+    func getLeague(index: Int) -> Leagues {
+        return leagues[index]
+    }
     private  func fetchFavoriteLeagues() -> [FavouriteLeagues] {
             let fetchRequest: NSFetchRequest<FavouriteLeagues> = FavouriteLeagues.fetchRequest()
             

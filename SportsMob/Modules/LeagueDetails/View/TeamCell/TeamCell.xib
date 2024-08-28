@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="teamCell" id="gTV-IL-0wX" customClass="TeamCell" customModule="SportsMob" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="173" height="185"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="173" height="185"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXS-tq-xUi">
+                        <rect key="frame" x="0.0" y="0.0" width="173" height="185"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bmv-IT-fAK">
+                                <rect key="frame" x="21" y="16" width="131" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="131" id="G19-GH-67N"/>
+                                    <constraint firstAttribute="height" constant="88" id="z8x-Cc-wGj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goL-84-0vY">
+                                <rect key="frame" x="21" y="127" width="131" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bmv-IT-fAK" firstAttribute="leading" secondItem="tXS-tq-xUi" secondAttribute="leading" constant="21" id="HRu-KF-SHn"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="centerX" secondItem="Bmv-IT-fAK" secondAttribute="centerX" id="Kbx-XA-Elb"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="leading" secondItem="Bmv-IT-fAK" secondAttribute="leading" id="WOW-9J-vzk"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="trailing" secondItem="Bmv-IT-fAK" secondAttribute="trailing" id="XuC-5V-aSf"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="leading" secondItem="tXS-tq-xUi" secondAttribute="leading" constant="21" id="axa-xB-JDA"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="width" secondItem="tXS-tq-xUi" secondAttribute="width" multiplier="0.757225" id="bAB-9O-2Vj"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="width" secondItem="Bmv-IT-fAK" secondAttribute="width" id="dJV-EW-rc2"/>
+                            <constraint firstItem="Bmv-IT-fAK" firstAttribute="top" secondItem="tXS-tq-xUi" secondAttribute="top" constant="16" id="dQQ-qo-xqi"/>
+                            <constraint firstAttribute="bottom" secondItem="goL-84-0vY" secondAttribute="bottom" constant="22" id="h74-Xz-Le6"/>
+                            <constraint firstAttribute="trailing" secondItem="goL-84-0vY" secondAttribute="trailing" constant="21" id="jDn-73-y4e"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="height" secondItem="tXS-tq-xUi" secondAttribute="height" multiplier="0.194595" id="n60-nO-2jE"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="top" secondItem="Bmv-IT-fAK" secondAttribute="bottom" constant="23" id="q6S-dS-t9c"/>
+                            <constraint firstAttribute="bottom" secondItem="Bmv-IT-fAK" secondAttribute="bottom" constant="81" id="z0X-po-sOU"/>
+                            <constraint firstAttribute="trailing" secondItem="Bmv-IT-fAK" secondAttribute="trailing" constant="21" id="zZf-UR-kVI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="tXS-tq-xUi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="iKs-mR-Uf8"/>
+                <constraint firstItem="tXS-tq-xUi" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="pBk-5e-PnB"/>
+            </constraints>
+            <size key="customSize" width="173" height="185"/>
+            <connections>
+                <outlet property="teamImage" destination="Bmv-IT-fAK" id="MAH-vH-Hr0"/>
+                <outlet property="teamLabel" destination="goL-84-0vY" id="OCU-5z-WNe"/>
+            </connections>
+            <point key="canvasLocation" x="67.938931297709928" y="35.563380281690144"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

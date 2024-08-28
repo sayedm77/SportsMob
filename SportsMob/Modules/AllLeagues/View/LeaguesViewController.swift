@@ -65,6 +65,16 @@ class LeaguesViewController: UIViewController ,UITableViewDataSource,UITableView
         viewModel.getLeagues()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if segue.identifier == "GoToDetails" {
+              if let destinationVC = segue.destination as? LeagueDetailsVC {
+                  let index = sender as! Int
+                  destinationVC.viewModel.league = viewModel.getLeague(index: index )
+                  destinationVC.viewModel.sport = viewModel.sport
+              }
+          }
+      }
+    
     private func navigateToSafari(_ index: Int) {
         if let url = self.viewModel.getYouTubeChannelURL(for: index) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -86,6 +96,14 @@ class LeaguesViewController: UIViewController ,UITableViewDataSource,UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (reachability.connection == .unavailable){
+            displayAlert()
+        }else{
+            self.performSegue(withIdentifier: "GoToDetails", sender: indexPath.row)
+        }
+        
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
