@@ -24,7 +24,7 @@ class LeaguesViewModel{
         if checkFav {
             let favoriteLeagues = fetchFavoriteLeagues()
             if let firstFavoriteLeague = favoriteLeagues.first {
-                if let sportType = SportType(from: firstFavoriteLeague.sportType ?? "") {
+                if let sportType = SportType(from: firstFavoriteLeague.sport ?? "") {
                     self.sport = sportType
                 } else {
                     print("Invalid SportType string")
@@ -32,12 +32,12 @@ class LeaguesViewModel{
             }
             leagues = favoriteLeagues.map { favoriteLeague in
                 Leagues(
-                    league_key: Int(favoriteLeague.league_key),
-                    league_name: favoriteLeague.league_name ?? "",
+                    league_key: Int(favoriteLeague.leagueKey),
+                    league_name: favoriteLeague.leagueName ?? "",
                     country_key: nil,
                     country_name: nil,
                     league_logo: nil,
-                    country_logo: favoriteLeague.league_logo,
+                    country_logo: favoriteLeague.leagueLogo,
                     league_year: nil
                 )
             }

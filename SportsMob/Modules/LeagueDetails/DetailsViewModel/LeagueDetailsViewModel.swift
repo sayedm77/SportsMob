@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 class LeagueDetailsViewModel{
     
     var sport : SportType?
@@ -18,6 +19,14 @@ class LeagueDetailsViewModel{
     var notFoundData: (()->()) = {}
     var noData: (()->()) = {}
     let manager = NetworkManager.manager
+    let coreDataService: CoreDataServiceProtocol!
+    
+    init() {
+        coreDataService = CoreDataService.shared
+        sport = .football
+        league = Leagues(league_key: 332, league_name: "MLS", country_key: nil, country_name: nil, league_logo: nil, country_logo: nil, league_year: nil)
+    }
+    
     
     func getDetails(){
         
@@ -57,6 +66,17 @@ class LeagueDetailsViewModel{
     func getTeams() {
         teams = TeamsFromEventGenerator.getTeams(events: latestEvents)
         self.bindResultToVC()
+    }
+    func addToFavorites() {
+        coreDataService.addLeague(league: league, sport: sport!)
+    }
+    
+    func removeFromFavorites() {
+        coreDataService.deleteLeague(leagueKey: league.league_key, sport: sport!)
+    }
+    
+    func checkFavorite() -> Bool {
+        return coreDataService.checkFav(leagueKey: league.league_key, sport: sport!)
     }
     
 }
