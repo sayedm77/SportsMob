@@ -8,7 +8,7 @@
 import UIKit
 import Reachability
 import CoreData
-import SDWebImage
+//import SDWebImage
 
 
 class LeaguesViewController: UIViewController ,UITableViewDataSource,UITableViewDelegate{
