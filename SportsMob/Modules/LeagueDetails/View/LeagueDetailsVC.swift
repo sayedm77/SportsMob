@@ -122,18 +122,18 @@ extension LeagueDetailsVC : UICollectionViewDelegate , UICollectionViewDataSourc
         }
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        let headers = ["Upcoming Events", "Latest Results", "Teams"]
-        
-        if let sectionHeader = leagueCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath) as? SectionHeader{
-            sectionHeader.sectionHeaderLAbel.text = headers[indexPath.section]
-            return sectionHeader
-        }
-        
-        return UICollectionReusableView()
-    }
-    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        
+//        let headers = ["Upcoming Events", "Latest Results", "Teams"]
+//        
+//        if let sectionHeader = leagueCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath) as? SectionHeader{
+//            sectionHeader.sectionHeaderLAbel.text = headers[indexPath.section]
+//            return sectionHeader
+//        }
+//        
+//        return UICollectionReusableView()
+//    }
+//    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 2 {
             self.performSegue(withIdentifier: "TeamDetailsSegue", sender: (viewModel.sport, viewModel.teams[indexPath.item].teamKey))

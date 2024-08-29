@@ -16,9 +16,14 @@ class LeaguesViewModel{
     var onLeaguesFetched: (() -> Void)?
     var onFetchFailed: ((Error) -> Void)?
     let manager = NetworkManager.manager
+    let coreDataService: CoreDataServiceProtocol!
     private let context = (UIApplication.shared.delegate as! AppDelegate).context
     var sport: SportType?
+    init() {
     
+        coreDataService = CoreDataService.shared
+        
+    }
     
     func getLeagues() {
         if checkFav {
@@ -36,8 +41,8 @@ class LeaguesViewModel{
                     league_name: favoriteLeague.leagueName ?? "",
                     country_key: nil,
                     country_name: nil,
-                    league_logo: nil,
-                    country_logo: favoriteLeague.leagueLogo,
+                    league_logo: favoriteLeague.leagueLogo,
+                    country_logo: nil,
                     league_year: nil
                 )
             }
@@ -60,6 +65,8 @@ class LeaguesViewModel{
             }
         }
     }
+    
+  
     
         func numberOfLeagues() -> Int {
             if checkFav {
@@ -89,7 +96,7 @@ class LeaguesViewModel{
         return URL(string: youtubeUrlString)
     
     }
-
+    
         
     
 }
