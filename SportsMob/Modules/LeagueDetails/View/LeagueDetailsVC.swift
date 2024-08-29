@@ -134,7 +134,20 @@ extension LeagueDetailsVC : UICollectionViewDelegate , UICollectionViewDataSourc
 //        return UICollectionReusableView()
 //    }
 //    
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 2 {
+            self.performSegue(withIdentifier: "TeamDetailsSegue", sender: (viewModel.sport, viewModel.teams[indexPath.item].teamKey))
+        }
+    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "TeamDetailsSegue" {
+//            if let nextViewController = segue.destination as? TeamDetailsVC {
+//                let (sport, teamKey) = sender as! (SportType, Int)
+//                nextViewController.viewModel.sport = sport
+//                nextViewController.viewModel.teamID = teamKey
+//            }
+//        }
+//    }
 }
 
 

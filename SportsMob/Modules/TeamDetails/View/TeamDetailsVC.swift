@@ -7,12 +7,18 @@
 
 import UIKit
 
-class TeamDetailsVC: UIViewController {
-
+class TeamDetailsVC: UIViewController , UITableViewDelegate,UITableViewDataSource{
+    @IBOutlet weak var noResultImgView: UIImageView!
+    @IBOutlet weak var imgViewBG: UIImageView!
+    @IBOutlet weak var playersTableView: UITableView!
+    
+    @IBOutlet weak var logoImgView: UIImageView!
+    @IBOutlet weak var coachNameLabel: UILabel!
+    @IBOutlet weak var teamNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        playersTableView.dataSource = self
+        playersTableView.delegate = self
     }
     
 
