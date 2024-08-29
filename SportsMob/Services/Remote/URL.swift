@@ -14,8 +14,6 @@ struct url {
     static let apiKey = "&APIkey=" + token
     static let token = "0bc68f46726057023e1e02eb28928e583985eb955391773f06338d53ea5c234b"
     
- 
-    
     static func UrlLeagues (sport : SportType) -> URL? {
         return URL(string: baseURL + sport.rawValue + leagues + apiKey)
     }
@@ -23,9 +21,37 @@ struct url {
         return URL(string: baseURL + sport.rawValue + leagueDetails + "\(leagueID)" + range.query + apiKey)
     }
     
-    static func getTeamDetailsURL(sport: SportType, teamID: Int) -> URL? {
-        return URL(string: baseURL + sport.rawValue + teamDetails + "\(teamID)" + apiKey)
+//    static func getTeamDetailsURL(sport: SportType, teamID: Int) -> URL? {
+//        print("HELLO")
+//        return URL(string: baseURL + sport.rawValue + teamDetails + "\(teamID)" + apiKey)
+//    }
+    
+    static func UrlTeamsDetails (sport: SportType, TeamID: Int) -> URL? {
+        print("HELLO")
+        return URL(string: baseURL + sport.rawValue + teamDetails + "\(TeamID)" + apiKey)
     }
+    
+    
+    
+    static func getTeams(latestEvents: [EventModel]) -> [TeamModel] {
+        var arrofTeams : [TeamModel] = []
+        var IdSet : Set<Int> = []
+        for event in latestEvents {
+            if !IdSet.contains(event.homeTeamKey){
+                let team = TeamModel(teamKey: event.homeTeamKey, teamName: event.eventHomeTeam ?? "", teamLogo: event.homeTeamLogo, players: nil, coaches: nil)
+                arrofTeams.append(team)
+                IdSet.insert(event.homeTeamKey)
+            }
+            if !IdSet.contains(event.homeTeamKey){
+                let team = TeamModel(teamKey: event.awayTeamKey, teamName: event.eventAwayTeam ?? "", teamLogo: event.awayTeamLogo, players: nil, coaches: nil)
+                arrofTeams.append(team)
+                IdSet.insert(event.awayTeamKey)
+            }
+        }
+        
+        return arrofTeams
+    }
+
 }
 //#
 enum DateRange: String {

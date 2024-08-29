@@ -22,12 +22,9 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bmv-IT-fAK">
                                 <rect key="frame" x="21" y="16" width="131" height="88"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="quo-cG-ydX"/>
-                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="goL-84-0vY">
-                                <rect key="frame" x="21" y="126.99999999999999" width="131" height="20.333333333333329"/>
+                                <rect key="frame" x="21" y="127" width="131" height="40"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,23 +32,25 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Bmv-IT-fAK" firstAttribute="leading" secondItem="tXS-tq-xUi" secondAttribute="leading" constant="21" id="51C-uR-RgU"/>
-                            <constraint firstItem="goL-84-0vY" firstAttribute="top" secondItem="Bmv-IT-fAK" secondAttribute="bottom" constant="23" id="TWH-46-VuI"/>
-                            <constraint firstItem="goL-84-0vY" firstAttribute="leading" secondItem="Bmv-IT-fAK" secondAttribute="leading" id="WOW-9J-vzk"/>
-                            <constraint firstItem="goL-84-0vY" firstAttribute="trailing" secondItem="Bmv-IT-fAK" secondAttribute="trailing" id="XuC-5V-aSf"/>
-                            <constraint firstItem="Bmv-IT-fAK" firstAttribute="top" secondItem="tXS-tq-xUi" secondAttribute="top" constant="16" id="YK4-gy-0Mx"/>
-                            <constraint firstItem="goL-84-0vY" firstAttribute="width" secondItem="Bmv-IT-fAK" secondAttribute="width" id="dJV-EW-rc2"/>
-                            <constraint firstItem="Bmv-IT-fAK" firstAttribute="centerX" secondItem="tXS-tq-xUi" secondAttribute="centerX" id="va9-HE-4Mv"/>
+                            <constraint firstItem="Bmv-IT-fAK" firstAttribute="top" secondItem="tXS-tq-xUi" secondAttribute="top" constant="16" id="1FQ-nm-J0V"/>
+                            <constraint firstItem="Bmv-IT-fAK" firstAttribute="width" secondItem="tXS-tq-xUi" secondAttribute="width" multiplier="0.757225" id="9Ag-SI-keq"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="height" secondItem="tXS-tq-xUi" secondAttribute="height" multiplier="0.216216" id="H1N-ZS-e3z"/>
+                            <constraint firstItem="Bmv-IT-fAK" firstAttribute="leading" secondItem="tXS-tq-xUi" secondAttribute="leading" constant="21" id="Hes-IF-cnP"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="leading" secondItem="tXS-tq-xUi" secondAttribute="leading" constant="21" id="Hg6-Kx-Ieq"/>
+                            <constraint firstAttribute="trailing" secondItem="goL-84-0vY" secondAttribute="trailing" constant="21" id="b8M-rZ-rBI"/>
+                            <constraint firstItem="Bmv-IT-fAK" firstAttribute="height" secondItem="tXS-tq-xUi" secondAttribute="height" multiplier="0.475676" id="imd-PV-rvh"/>
+                            <constraint firstAttribute="bottom" secondItem="goL-84-0vY" secondAttribute="bottom" constant="18" id="niR-Nk-aog"/>
+                            <constraint firstAttribute="trailing" secondItem="Bmv-IT-fAK" secondAttribute="trailing" constant="21" id="sr2-yU-1OA"/>
+                            <constraint firstItem="goL-84-0vY" firstAttribute="top" secondItem="Bmv-IT-fAK" secondAttribute="bottom" constant="23" id="w1u-hf-K3G"/>
                         </constraints>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="tXS-tq-xUi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CYH-ON-Na8"/>
-                <constraint firstItem="tXS-tq-xUi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="iKs-mR-Uf8"/>
-                <constraint firstItem="tXS-tq-xUi" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="pBk-5e-PnB"/>
-                <constraint firstItem="tXS-tq-xUi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qH1-m9-CZ0"/>
+                <constraint firstItem="tXS-tq-xUi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="F6q-mZ-PAg"/>
+                <constraint firstItem="tXS-tq-xUi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Kf7-g6-5bI"/>
+                <constraint firstItem="tXS-tq-xUi" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="af6-mv-Twu"/>
             </constraints>
             <size key="customSize" width="173" height="185"/>
             <connections>

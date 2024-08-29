@@ -84,7 +84,7 @@
                                         <constraint firstItem="bbP-aZ-h8b" firstAttribute="top" secondItem="2GI-kz-o7A" secondAttribute="top" constant="8" id="wxD-ym-7Cw"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="sectionHeaderLAbel" destination="bbP-aZ-h8b" id="zN2-Vb-opF"/>
+                                        <outlet property="sectionHeaderLAbel" destination="bbP-aZ-h8b" id="4mZ-kT-u6I"/>
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
@@ -117,13 +117,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gLs-2K-nYf">
-                                <rect key="frame" x="0.0" y="400" width="393" height="452"/>
+                                <rect key="frame" x="0.0" y="407" width="393" height="411"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noPlayer" id="nyy-cQ-gJH">
-                                <rect key="frame" x="0.0" y="403" width="393" height="415"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fxB-JK-LVh">
                                 <rect key="frame" x="0.0" y="127" width="393" height="272"/>
                             </imageView>
@@ -158,17 +154,14 @@
                             <constraint firstItem="gLs-2K-nYf" firstAttribute="leading" secondItem="5ME-Qf-eqX" secondAttribute="leading" id="HTX-Yi-gxZ"/>
                             <constraint firstItem="a8s-B8-DKz" firstAttribute="height" secondItem="L9J-gA-6G1" secondAttribute="height" multiplier="0.0305164" id="Jc0-Fi-ioq"/>
                             <constraint firstItem="5ME-Qf-eqX" firstAttribute="trailing" secondItem="Nlk-Dj-86Q" secondAttribute="trailing" constant="24" id="MFr-OX-81v"/>
-                            <constraint firstItem="gLs-2K-nYf" firstAttribute="bottom" secondItem="5ME-Qf-eqX" secondAttribute="bottom" constant="34" id="Mi1-MT-c41"/>
+                            <constraint firstItem="gLs-2K-nYf" firstAttribute="bottom" secondItem="5ME-Qf-eqX" secondAttribute="bottom" id="Mi1-MT-c41"/>
                             <constraint firstItem="7TZ-VJ-rTP" firstAttribute="height" secondItem="L9J-gA-6G1" secondAttribute="height" multiplier="0.0786385" id="Sa3-nL-Tzb"/>
                             <constraint firstItem="fxB-JK-LVh" firstAttribute="width" secondItem="L9J-gA-6G1" secondAttribute="width" id="Tsc-kJ-e7g"/>
                             <constraint firstItem="7TZ-VJ-rTP" firstAttribute="leading" secondItem="5ME-Qf-eqX" secondAttribute="leading" constant="8" id="VYX-9T-XwI"/>
                             <constraint firstItem="fxB-JK-LVh" firstAttribute="height" secondItem="L9J-gA-6G1" secondAttribute="height" multiplier="0.319249" id="XPQ-qe-0CH"/>
-                            <constraint firstItem="nyy-cQ-gJH" firstAttribute="trailing" secondItem="gLs-2K-nYf" secondAttribute="trailing" id="fgc-bK-9WO"/>
-                            <constraint firstItem="gLs-2K-nYf" firstAttribute="height" secondItem="L9J-gA-6G1" secondAttribute="height" multiplier="0.530516" id="glg-cd-fkU"/>
+                            <constraint firstItem="gLs-2K-nYf" firstAttribute="height" secondItem="L9J-gA-6G1" secondAttribute="height" multiplier="0.530516" constant="-40.999631999999963" id="glg-cd-fkU"/>
                             <constraint firstItem="a8s-B8-DKz" firstAttribute="top" secondItem="5ME-Qf-eqX" secondAttribute="top" constant="229" id="hNc-Q2-6bJ"/>
-                            <constraint firstItem="nyy-cQ-gJH" firstAttribute="leading" secondItem="gLs-2K-nYf" secondAttribute="leading" id="n4k-Rq-ugs"/>
                             <constraint firstItem="5ME-Qf-eqX" firstAttribute="trailing" secondItem="a8s-B8-DKz" secondAttribute="trailing" constant="16" id="vxF-zA-mkS"/>
-                            <constraint firstItem="gLs-2K-nYf" firstAttribute="width" secondItem="L9J-gA-6G1" secondAttribute="width" id="wjr-3c-ILl"/>
                             <constraint firstItem="Nlk-Dj-86Q" firstAttribute="leading" secondItem="5ME-Qf-eqX" secondAttribute="leading" constant="119" id="yAy-T7-ttM"/>
                             <constraint firstItem="5ME-Qf-eqX" firstAttribute="trailing" secondItem="fxB-JK-LVh" secondAttribute="trailing" id="yiQ-6z-HAt"/>
                         </constraints>
@@ -178,7 +171,6 @@
                         <outlet property="coachNameLabel" destination="Nlk-Dj-86Q" id="49S-Yx-0Dc"/>
                         <outlet property="imgViewBG" destination="fxB-JK-LVh" id="7SB-1Q-pLn"/>
                         <outlet property="logoImgView" destination="7TZ-VJ-rTP" id="zbV-mE-RNp"/>
-                        <outlet property="noResultImgView" destination="nyy-cQ-gJH" id="X8S-qg-f0o"/>
                         <outlet property="playersTableView" destination="gLs-2K-nYf" id="6yf-2r-DMO"/>
                         <outlet property="teamNameLabel" destination="a8s-B8-DKz" id="GVH-Bm-FTO"/>
                     </connections>
@@ -293,7 +285,6 @@
     </scenes>
     <resources>
         <image name="heart.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="noPlayer" width="1280" height="914"/>
         <image name="sportscourt.circle" catalog="system" width="128" height="123"/>
         <image name="teamLogo" width="450" height="450"/>
         <systemColor name="systemBackgroundColor">

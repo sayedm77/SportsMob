@@ -64,7 +64,7 @@ class LeagueDetailsViewModel{
         
     }
     func getTeams() {
-        teams = TeamsFromEventGenerator.getTeams(events: latestEvents)
+        teams = url.getTeams(latestEvents: latestEvents)
         self.bindResultToVC()
     }
     func addToFavorites() {

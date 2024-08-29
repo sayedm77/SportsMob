@@ -7,7 +7,7 @@
 
 import Foundation
 class TeamDetailsViewModel {
-    var networkService : NetworkManager!
+    var manager : NetworkManager!
     var sport : SportType?
     var teamID : Int?
     var team : [TeamModel] = [] {
@@ -21,14 +21,14 @@ class TeamDetailsViewModel {
     var noResultFound : (()->()) = {}
     
     init() {
-        networkService = NetworkManager()
+        manager = NetworkManager.manager
     }
     
     func getTeamDetails() {
         guard let sport = sport else {return}
         guard let teamID = teamID else {return}
-        guard let url = url.getTeamDetailsURL(sport: sport, teamID: teamID) else {return}
-        networkService.fetchData(url: url, model: TeamModelAPIResponse.self) { result, error in
+        guard let url = url.UrlTeamsDetails(sport: sport, TeamID: teamID)else {return}
+        manager.fetchData(url: url, model: TeamModelAPIResponse.self) { result, error in
             if error != nil {
                 self.noResultFound()
             }
