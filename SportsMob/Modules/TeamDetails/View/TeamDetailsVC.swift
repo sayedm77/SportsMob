@@ -5,13 +5,6 @@
 //  Created by sayed mansour on 28/08/2024.
 //
 
-//import UIKit
-//import Kingfisher
-//
-//class TeamDetailsVC: UIViewController , UITableViewDelegate,UITableViewDataSource{
-//    var viewModel: TeamDetailsViewModel!
-//    let indicator = UIActivityIndicatorView(style: .large)
-
 import UIKit
 import Kingfisher
 class TeamDetailsVC: UIViewController, UITableViewDelegate,UITableViewDataSource {

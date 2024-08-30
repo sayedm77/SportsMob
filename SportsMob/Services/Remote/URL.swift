@@ -12,7 +12,7 @@ struct url {
     static let leagueDetails = "/?met=Fixtures&leagueId="
     static let teamDetails = "/?&met=Teams&teamId="
     static let apiKey = "&APIkey=" + token
-    static let token = "0bc68f46726057023e1e02eb28928e583985eb955391773f06338d53ea5c234b"
+    static let token = "d3bea2f37d46b6b7aa6c504992d7c9efbdef6944e8c333889ecef4165b8d0f5c"
     
     static func UrlLeagues (sport : SportType) -> URL? {
         return URL(string: baseURL + sport.rawValue + leagues + apiKey)
@@ -21,10 +21,6 @@ struct url {
         return URL(string: baseURL + sport.rawValue + leagueDetails + "\(leagueID)" + range.query + apiKey)
     }
     
-//    static func getTeamDetailsURL(sport: SportType, teamID: Int) -> URL? {
-//        print("HELLO")
-//        return URL(string: baseURL + sport.rawValue + teamDetails + "\(teamID)" + apiKey)
-//    }
     
     static func UrlTeamsDetails (sport: SportType, TeamID: Int) -> URL? {
         print("HELLO")

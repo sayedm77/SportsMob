@@ -20,6 +20,12 @@ class LeagueDetailsViewModel{
     var noData: (()->()) = {}
     let manager = NetworkManager.manager
     let coreDataService: CoreDataServiceProtocol!
+    var doneRequests = [0, 0] {
+        didSet {
+            bindResultToVC()
+        }
+    }
+    
     
     init() {
         coreDataService = CoreDataService.shared
@@ -30,24 +36,42 @@ class LeagueDetailsViewModel{
     
     func getDetails(){
         
-        getEvents()
+        getUpcomingEvents()
         getLatestResults()
     }
     
-    func getEvents()  {
-        manager.fetchData(url: url.getLeagueDetailsURL(sport: sport ?? .football, leagueID: league.league_key, forDate: .nextYear), model: EventModelApiResponse.self, completion: { response, error in
-            if let response = response {
-                self.upcomingEvents = response.result
-                DispatchQueue.main.async {
-                    self.bindResultToVC()
-                }
-            } else {
-                // display photo if no data come from all section
-               self.notFoundData()
+    func getUpcomingEvents() {
+        let upcomingURL = url.getLeagueDetailsURL(sport: sport! , leagueID: league.league_key, forDate: .nextYear)
+        manager.fetchData(url: upcomingURL, model: EventModelApiResponse.self) { [weak self] response, error in
+            if let error = error {
+                print(error.localizedDescription)
+                self?.doneRequests[0] = 1
+                return
             }
-        })
-        
+            guard let response = response else {
+                print("No data in response")
+                self?.doneRequests[0] = 1
+                return
+            }
+            self?.upcomingEvents = response.result.reversed()
+            self?.doneRequests[0] = 1
+        }
     }
+    
+//    func getEvents()  {
+//        manager.fetchData(url: url.getLeagueDetailsURL(sport: sport ?? .football, leagueID: league.league_key, forDate: .nextYear), model: EventModelApiResponse.self, completion: { response, error in
+//            if let response = response {
+//                self.upcomingEvents = response.result
+//                DispatchQueue.main.async {
+//                    self.bindResultToVC()
+//                }
+//            } else {
+//                // display photo if no data come from all section
+//               self.notFoundData()
+//            }
+//        })
+//        
+//    }
     func getLatestResults()  {
         manager.fetchData(url: url.getLeagueDetailsURL(sport: sport ?? .football, leagueID: league.league_key, forDate: .prevYear), model: EventModelApiResponse.self, completion: { response, error in
             if let response = response {

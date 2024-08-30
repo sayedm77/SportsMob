@@ -50,7 +50,11 @@
             <constraints>
                 <constraint firstItem="tXS-tq-xUi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="F6q-mZ-PAg"/>
                 <constraint firstItem="tXS-tq-xUi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Kf7-g6-5bI"/>
+                <constraint firstAttribute="bottom" secondItem="tXS-tq-xUi" secondAttribute="bottom" id="LMU-L6-dzp"/>
                 <constraint firstItem="tXS-tq-xUi" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="af6-mv-Twu"/>
+                <constraint firstItem="tXS-tq-xUi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="e3A-RR-vHW"/>
+                <constraint firstItem="tXS-tq-xUi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ni9-vJ-ui9"/>
+                <constraint firstAttribute="trailing" secondItem="tXS-tq-xUi" secondAttribute="trailing" id="rDs-a8-n6o"/>
             </constraints>
             <size key="customSize" width="173" height="185"/>
             <connections>

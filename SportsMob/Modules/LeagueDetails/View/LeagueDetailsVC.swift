@@ -26,8 +26,6 @@ class LeagueDetailsVC: UIViewController {
        
         setupUI()
         setUpView()
-
-        // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         setupUI()
@@ -80,11 +78,13 @@ class LeagueDetailsVC: UIViewController {
         leagueCollectionView.register(UINib(nibName: "EventCell", bundle: .main), forCellWithReuseIdentifier: "eventCell")
         leagueCollectionView.register(UINib(nibName: "TeamCell", bundle: .main), forCellWithReuseIdentifier: "teamCell")
         leagueCollectionView.register(UINib(nibName: "NoEventCell", bundle: .main), forCellWithReuseIdentifier: "noEvent")
+        let nib = UINib(nibName: "SectionHeader", bundle: nil)
+        leagueCollectionView.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "sectionHeader") 
+        
     }
     
     }
         
-  
 
 extension LeagueDetailsVC : UICollectionViewDelegate , UICollectionViewDataSource {
 
@@ -95,7 +95,7 @@ extension LeagueDetailsVC : UICollectionViewDelegate , UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return viewModel.upcomingEvents.count
+            return  viewModel.upcomingEvents.isEmpty ? 1 : viewModel.upcomingEvents.count
         case 1:
             return viewModel.latestEvents.count
         case 2:
@@ -122,18 +122,8 @@ extension LeagueDetailsVC : UICollectionViewDelegate , UICollectionViewDataSourc
         }
         return cell
     }
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        
-//        let headers = ["Upcoming Events", "Latest Results", "Teams"]
-//        
-//        if let sectionHeader = leagueCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath) as? SectionHeader{
-//            sectionHeader.sectionHeaderLAbel.text = headers[indexPath.section]
-//            return sectionHeader
-//        }
-//        
-//        return UICollectionReusableView()
-//    }
-//    
+  
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 2 {
             self.performSegue(withIdentifier: "TeamDetailsSegue", sender: (viewModel.sport, viewModel.teams[indexPath.item].teamKey))
@@ -167,10 +157,21 @@ extension LeagueDetailsVC : UICollectionViewDelegateFlowLayout {
         leagueCollectionView.setCollectionViewLayout(layout, animated: true)
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let headers = ["Upcoming Events", "Latest Results", "Teams"]
+        
+        if let sectionHeader = leagueCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "sectionHeader", for: indexPath) as? SectionHeader{
+            sectionHeader.sectionHeaderLabel.text = headers[indexPath.section]
+            return sectionHeader
+        }
+        
+        return UICollectionReusableView()
+    }
     func drawUpComingSection() -> NSCollectionLayoutSection{
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:  .absolute(UIScreen.main.bounds.height/5))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension:  .absolute(UIScreen.main.bounds.height/4.5))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 32)
         let section = NSCollectionLayoutSection(group: group)
