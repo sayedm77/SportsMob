@@ -126,7 +126,6 @@ class TeamDetailsVC: UIViewController, UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = playersTableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as! PlayerCell
         cell.setupCell(player: viewModel.getPlayer(index: indexPath.row))
-        print("heloo")
         return cell
       
     }
