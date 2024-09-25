@@ -1,4 +1,4 @@
-# SportsApp
+# SportsMob
 
 ============
 
@@ -25,20 +25,20 @@ The current version is working with Xcode Version Xcode 13. If you are using dif
 1) Clone the repository
 
 ```bash
-$ git clone https://github.com/ITI-Swift-Project/SportsApp.git
+$ git clone https://github.com/sayedm77/SportsMob
 ```
 
 2) Install pods
 
 ```bash
-$ cd SportsApp
+$ cd SportsMob
 $ pod install
 ```
 
 3) Open the workspace in Xcode
 
 ```bash
-$ open "SportsApp.xcworkspace"
+$ open "SportsMob.xcworkspace"
 ```
 
 4) Sign up on (https://allsportsapi.com/) to get an appid
